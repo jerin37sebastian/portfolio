@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jerin Sebastian — Portfolio</title>
+  <meta name="description" content="Frontend Developer & UI/UX Designer from Kerala, India." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">JS.</div>
+    <div class="nav-links">
+      <a href="#projects">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-label" id="hero-label">Available for work</div>
+      <h1 class="hero-name" id="hero-name">
+        Jerin<br /><span>Sebastian.</span>
+      </h1>
+      <p class="hero-title" id="hero-title">Frontend Developer & UI/UX Designer</p>
+      <p class="hero-bio" id="hero-bio">
+        Loading...
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-socials" id="hero-socials">
+        <!-- Populated from Firestore -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Selected Work</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <div class="loading"><div class="spinner"></div> Loading projects...</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid" id="skills-grid">
+      <div class="loading"><div class="spinner"></div> Loading skills...</div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Articles</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      <div class="loading"><div class="spinner"></div> Loading articles...</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Let's Talk</h2>
+      <div class="section-line"></div>
+    </div>
+    <form class="contact-form reveal" id="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@email.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+        Send Message →
+      </button>
+      <div class="form-success" id="form-success">
+        ✓ Message sent! I'll get back to you soon.
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Jerin Sebastian</span>
+    <span>Built with ♥ in Kerala</span>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

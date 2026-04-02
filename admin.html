@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Portfolio CMS</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div id="login-screen">
+    <div class="login-card">
+      <div class="login-logo">JS. Admin</div>
+      <p class="login-sub">Sign in to manage your portfolio</p>
+      <div class="login-error" id="login-error">Invalid email or password.</div>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button class="btn btn-primary" style="width:100%" onclick="handleLogin()">
+        Sign In →
+      </button>
+    </div>
+  </div>
+
+  <!-- ADMIN APP -->
+  <div id="admin-app">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-logo">JS. CMS</div>
+      <button class="sidebar-btn active" onclick="showPanel('hero')">🏠 Hero</button>
+      <button class="sidebar-btn" onclick="showPanel('projects')">🚀 Projects</button>
+      <button class="sidebar-btn" onclick="showPanel('skills')">⚡ Skills</button>
+      <button class="sidebar-btn" onclick="showPanel('blog')">📝 Blog</button>
+      <button class="sidebar-btn" onclick="showPanel('messages')">💬 Messages</button>
+      <div class="sidebar-spacer"></div>
+      <button class="sidebar-btn sidebar-logout" onclick="handleLogout()">← Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <!-- HERO PANEL -->
+      <div class="admin-panel active" id="panel-hero">
+        <div class="panel-title">Hero Section</div>
+        <div class="admin-card">
+          <h3>Your Info</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Display Title (e.g. Frontend Developer)</label>
+              <input type="text" id="hero-title" placeholder="Frontend Developer & UI/UX Designer" />
+            </div>
+            <div class="form-group">
+              <label>Status Label (e.g. Available for work)</label>
+              <input type="text" id="hero-label" placeholder="Available for work" />
+            </div>
+            <div class="form-group full">
+              <label>Bio / Short Description</label>
+              <textarea id="hero-bio" placeholder="A short paragraph about yourself..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>Social Links</h3>
+          <div id="socials-list"></div>
+          <div class="form-grid" style="margin-top:1rem">
+            <div class="form-group">
+              <label>Label</label>
+              <input type="text" id="social-label" placeholder="GitHub" />
+            </div>
+            <div class="form-group">
+              <label>URL</label>
+              <input type="url" id="social-url" placeholder="https://github.com/..." />
+            </div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:0.8rem" onclick="addSocial()">+ Add Social</button>
+        </div>
+        <button class="btn btn-primary" onclick="saveHero()">Save Hero →</button>
+      </div>
+
+      <!-- PROJECTS PANEL -->
+      <div class="admin-panel" id="panel-projects">
+        <div class="panel-title">Projects</div>
+        <div class="admin-card">
+          <h3>Add / Edit Project</h3>
+          <input type="hidden" id="project-id" />
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Project Title</label>
+              <input type="text" id="project-title" placeholder="Nammade Bus" />
+            </div>
+            <div class="form-group">
+              <label>Tags (comma separated)</label>
+              <input type="text" id="project-tags" placeholder="PWA, Firebase, JS" />
+            </div>
+            <div class="form-group full">
+              <label>Description</label>
+              <textarea id="project-desc" placeholder="What does this project do?"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Live URL</label>
+              <input type="url" id="project-url" placeholder="https://..." />
+            </div>
+            <div class="form-group">
+              <label>Image URL (optional)</label>
+              <input type="url" id="project-image" placeholder="https://..." />
+            </div>
+            <div class="form-group">
+              <label>Order (display position)</label>
+              <input type="number" id="project-order" placeholder="1" value="1" />
+            </div>
+          </div>
+          <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+            <button class="btn btn-primary" onclick="saveProject()">Save Project →</button>
+            <button class="btn btn-ghost" onclick="clearProjectForm()">Clear</button>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>All Projects</h3>
+          <div class="items-list" id="projects-list"></div>
+        </div>
+      </div>
+
+      <!-- SKILLS PANEL -->
+      <div class="admin-panel" id="panel-skills">
+        <div class="panel-title">Skills</div>
+        <div class="admin-card">
+          <h3>Add Skill</h3>
+          <input type="hidden" id="skill-id" />
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Skill Name</label>
+              <input type="text" id="skill-name" placeholder="HTML/CSS" />
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <input type="text" id="skill-category" placeholder="Frontend" />
+            </div>
+            <div class="form-group full">
+              <label>Level: <span id="skill-level-display">80</span>%</label>
+              <input type="range" id="skill-level" min="0" max="100" value="80"
+                oninput="document.getElementById('skill-level-display').textContent=this.value"
+                style="padding:0;border:none;background:transparent;accent-color:var(--blue);" />
+            </div>
+          </div>
+          <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+            <button class="btn btn-primary" onclick="saveSkill()">Save Skill →</button>
+            <button class="btn btn-ghost" onclick="clearSkillForm()">Clear</button>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>All Skills</h3>
+          <div class="items-list" id="skills-list"></div>
+        </div>
+      </div>
+
+      <!-- BLOG PANEL -->
+      <div class="admin-panel" id="panel-blog">
+        <div class="panel-title">Blog / Articles</div>
+        <div class="admin-card">
+          <h3>Write Article</h3>
+          <input type="hidden" id="blog-id" />
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Title</label>
+              <input type="text" id="blog-title" placeholder="My article title..." />
+            </div>
+            <div class="form-group full">
+              <label>Body</label>
+              <textarea id="blog-body" style="min-height:180px" placeholder="Write your article..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Publish Date</label>
+              <input type="date" id="blog-date" />
+            </div>
+            <div class="form-group">
+              <label>Published</label>
+              <div class="toggle-row" style="margin:0">
+                <span style="font-size:0.85rem;color:var(--muted)">Show on portfolio</span>
+                <label class="toggle">
+                  <input type="checkbox" id="blog-published" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+            <button class="btn btn-primary" onclick="saveBlog()">Publish →</button>
+            <button class="btn btn-ghost" onclick="clearBlogForm()">Clear</button>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>All Articles</h3>
+          <div class="items-list" id="blog-list"></div>
+        </div>
+      </div>
+
+      <!-- MESSAGES PANEL -->
+      <div class="admin-panel" id="panel-messages">
+        <div class="panel-title">Messages</div>
+        <div id="messages-list">
+          <div style="color:var(--muted);font-size:0.88rem">Loading messages...</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
