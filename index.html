@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jerin Sebastian — Developer & Designer</title>
+  <meta name="description" content="Frontend Developer & UI/UX Designer from Kerala, India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- BACKGROUND MESH -->
+  <div class="mesh-bg">
+    <div class="mesh-orb orb1"></div>
+    <div class="mesh-orb orb2"></div>
+    <div class="mesh-orb orb3"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">JS<span>.</span></a>
+      <div class="nav-links">
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge" id="hero-label">
+          <span class="badge-dot"></span>
+          <span>Available for work</span>
+        </div>
+        <h1 class="hero-heading">
+          <span class="line-wrap"><span class="line-text" id="hero-name-first">Jerin</span></span>
+          <span class="line-wrap"><span class="line-text" id="hero-name-last">Sebastian<span class="accent">.</span></span></span>
+        </h1>
+        <p class="hero-role" id="hero-title">Frontend Developer & UI/UX Designer</p>
+        <p class="hero-bio" id="hero-bio">Loading...</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-main">
+            <span>View Work</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-outline">Get In Touch</a>
+        </div>
+        <div class="hero-socials" id="hero-socials"></div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-visual">
+          <div class="avatar-box">
+            <div class="avatar-ring ring1"></div>
+            <div class="avatar-ring ring2"></div>
+            <div class="avatar-core">JS</div>
+          </div>
+          <div class="float-chip chip1"><span>⚡</span> Fast Builder</div>
+          <div class="float-chip chip2"><span>🎨</span> UI/UX</div>
+          <div class="float-chip chip3"><span>🔥</span> Firebase</div>
+          <div class="float-chip chip4"><span>📱</span> Mobile</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-bar"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>HTML &amp; CSS</span><b>·</b>
+      <span>JavaScript</span><b>·</b>
+      <span>Firebase</span><b>·</b>
+      <span>UI/UX Design</span><b>·</b>
+      <span>Figma</span><b>·</b>
+      <span>PWA</span><b>·</b>
+      <span>Android</span><b>·</b>
+      <span>GitHub Pages</span><b>·</b>
+      <span>HTML &amp; CSS</span><b>·</b>
+      <span>JavaScript</span><b>·</b>
+      <span>Firebase</span><b>·</b>
+      <span>UI/UX Design</span><b>·</b>
+      <span>Figma</span><b>·</b>
+      <span>PWA</span><b>·</b>
+      <span>Android</span><b>·</b>
+      <span>GitHub Pages</span><b>·</b>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="sec-label reveal">
+      <span class="sec-num">01</span>
+      <span class="sec-line"></span>
+      <span class="sec-tag">Selected Work</span>
+    </div>
+    <h2 class="sec-title reveal">Projects that<br /><em>matter.</em></h2>
+    <div class="projects-grid" id="projects-grid">
+      <div class="loading-state"><div class="spinner"></div><span>Loading projects...</span></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills-section">
+    <div class="sec-label reveal">
+      <span class="sec-num">02</span>
+      <span class="sec-line"></span>
+      <span class="sec-tag">Capabilities</span>
+    </div>
+    <h2 class="sec-title reveal">What I <em>do well.</em></h2>
+    <div class="skills-grid" id="skills-grid">
+      <div class="loading-state"><div class="spinner"></div><span>Loading skills...</span></div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="section">
+    <div class="sec-label reveal">
+      <span class="sec-num">03</span>
+      <span class="sec-line"></span>
+      <span class="sec-tag">Writing</span>
+    </div>
+    <h2 class="sec-title reveal">Thoughts &amp;<br /><em>articles.</em></h2>
+    <div class="blog-grid" id="blog-grid">
+      <div class="loading-state"><div class="spinner"></div><span>Loading articles...</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="contact-wrap">
+      <div class="contact-left reveal">
+        <div class="sec-label" style="margin-bottom:1.5rem">
+          <span class="sec-num">04</span>
+          <span class="sec-line"></span>
+          <span class="sec-tag">Contact</span>
+        </div>
+        <h2 class="sec-title">Let's build<br /><em>together.</em></h2>
+        <p class="contact-desc">Have a project? I'd love to hear about it. Drop me a message and I'll get back to you.</p>
+        <div class="contact-socials" id="contact-socials"></div>
+      </div>
+      <div class="contact-right reveal">
+        <form class="cform" id="contact-form">
+          <div class="cform-row">
+            <div class="cform-group">
+              <label>Name</label>
+              <input type="text" id="c-name" placeholder="Your name" required />
+            </div>
+            <div class="cform-group">
+              <label>Email</label>
+              <input type="email" id="c-email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="cform-group">
+            <label>Message</label>
+            <textarea id="c-message" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-main" style="width:100%;justify-content:center;gap:0.6rem">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <div class="form-ok" id="form-success">✓ Message sent! I'll get back to you soon.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">JS<em>.</em></span>
+      <span class="footer-copy">© 2026 Jerin Sebastian · Kerala 🌴</span>
+      <a href="admin.html" class="footer-admin">Admin ↗</a>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+  <script>
+    // Custom cursor (desktop only)
+    if (window.innerWidth > 768) {
+      const cursor = document.getElementById('cursor');
+      const dot = document.getElementById('cursor-dot');
+      let mx=0,my=0,cx=0,cy=0;
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+      });
+      (function anim() {
+        cx += (mx-cx)*0.1; cy += (my-cy)*0.1;
+        cursor.style.left = cx + 'px';
+        cursor.style.top  = cy + 'px';
+        requestAnimationFrame(anim);
+      })();
+      document.querySelectorAll('a,button').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+      });
+    }
+
+    // Nav on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('solid', scrollY > 60);
+    });
+
+    // Scroll reveal
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 }).observe.bind(
+      new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.08 })
+    );
+
+    // Simple reveal observer
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+    }, {threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
